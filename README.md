@@ -1,6 +1,4 @@
-# Checkers Coac
-
-## The web app is fully in english to cover a bigger audience/ Веб-приложение сделано на английском чтобы охватить большую аудиторию
+# Checkers Coach
 
 Checkers Coach is a web application for learning and practicing checkers. The main idea of the project is to make checkers more beginner-friendly by combining gameplay with simple coaching features and move guidance.
 
@@ -51,6 +49,8 @@ The main focus was:
 - simple but understandable project structure
 
 I also tried to separate the game logic from the interface to make the roject easier to maintain and improve later.
+
+P.S The web app is fully in english to cover a bigger audience / Веб-приложение сделано на английском чтобы охватить большую аудиторию
 
 ## Running Locally
 

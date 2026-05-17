@@ -1,68 +1,60 @@
-# ♟️ Checkers Coach
+# Checkers Coac
 
-A modern checkers training platform for beginners and kids. Play checkers against an AI or a friend, get legal move hints, and receive personalized coaching feedback after every game.
+## The web app is fully in english to cover a bigger audience/ Веб-приложение сделано на английском чтобы охватить большую аудиторию
 
-## Features
+Checkers Coach is a web application for learning and practicing checkers. The main idea of the project is to make checkers more beginner-friendly by combining gameplay with simple coaching features and move guidance.
 
-- ✅ Full checkers rules (mandatory jumps, multi-jumps, king promotion)
-- 💡 Legal move hints — click a piece to see where it can go
-- 🤖 Two AI modes: Easy (random) and Smart (strategic)
-- 👥 Local 2-player mode
-- 🎓 Post-game coach feedback (rule-based, no paid API)
-- 📋 Game history saved to localStorage (last 20 games)
-- 📱 Responsive, mobile-friendly layout
-- 🌙 Dark/light mode toggle
+## Main Features
+
+- Fully playable checkers game
+- Legal move highlighting
+- Mandatory captures and king promotion
+- Two "AI" difficulty levels
+- Post-game coaching feedback
+- Local 2-player mode
+- Game history saved in the browser
+- Responsive UI for desktop and mobile
+
+## How It Works
+
+The application is divided into separate parts:
+
+- `app/` contains the pages and routing
+- `components/` contains reusable UI components
+- `lib/checkers.ts` contains the core game logic and rules
+- `lib/coach.ts` generates feedback after games
+- `lib/storage.ts` handles local game saving
+
+The board rendering and the game logic are separated intentionally so that the rules do not depend on the UI.
+
+The AI system is rule-based:
+- Easy AI chooses weaker/random legal moves
+- Smart AI evaluates moves using a scoring system that prioritizes captures, king promotion, and positioning
+
+The project does not use a backend or database. All game history is stored locally in the browser using localStorage.
 
 ## Tech Stack
 
-- **Next.js 15** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **localStorage** for game history (no database needed)
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
-## Run Locally
+## What I Focused On
+
+Instead of creating only a basic checkers board, I wanted to make the project feel more like a real learning platform.
+
+The main focus was:
+- clean and modern UI
+- beginner-friendly gameplay
+- responsive design
+- simple but understandable project structure
+
+I also tried to separate the game logic from the interface to make the roject easier to maintain and improve later.
+
+## Running Locally
 
 ```bash
 npm install
 npm run dev
-# Open http://localhost:3000
-```
-
-## Deploy on Vercel
-
-```bash
-npm install -g vercel
-vercel
-```
-
-Or: push to GitHub → import on [vercel.com](https://vercel.com) → deploy in 1 click.
-
-## File Structure
-
-```
-lib/
-  checkers.ts   — All game logic (board, rules, moves)
-  ai.ts         — Easy and Smart AI
-  storage.ts    — localStorage helpers
-  coach.ts      — Post-game tip analysis
-
-components/
-  Board.tsx         — 8x8 visual board
-  GameSidebar.tsx   — Status, controls, new game
-  MoveHistory.tsx   — Saved games list
-  CoachModal.tsx    — Post-game coaching modal
-
-app/
-  page.tsx          — Landing page
-  game/page.tsx     — Main game page
-```
-
-## How It Works
-
-Game state lives entirely in React state (`useState`). All move logic is in `lib/checkers.ts` — completely separated from UI. The AI runs synchronously in the browser (no backend). After a game, `lib/coach.ts` re-simulates the moves and generates beginner tips based on simple rules (capture rate, king promotion, game length).
-
-## Limitations
-
-- No online multiplayer (requires WebSocket/server)
-- Coach tips are rule-based, not LLM-powered (Pro feature placeholder)
-- No user accounts or authentication
+http://localhost:3000

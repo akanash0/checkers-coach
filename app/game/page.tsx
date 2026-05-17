@@ -43,7 +43,7 @@ export default function GamePage() {
     return () => { mountedRef.current = false; };
   }, []);
 
-  // ── Timer ──────────────────────────────────────────────────────────────────
+  // ── Timer ──
   useEffect(() => {
     timerRef.current = setInterval(() => {
       if (!gameOver) {
@@ -56,11 +56,8 @@ export default function GamePage() {
   }, [gameOver]);
 
   // ── Game-over detection ────────────────────────────────────────────────────
-  //
-  // KEY FIX: we use a ref (gameStateRef) to always read the latest gameState
-  // inside the effect, avoiding the stale-closure problem where moveHistory
-  // would appear empty because the effect captured an old snapshot.
-  //
+  // Keep latest game state available inside effects.
+  
   const gameStateRef = useRef(gameState);
   useEffect(() => { gameStateRef.current = gameState; }, [gameState]);
 

@@ -69,13 +69,8 @@ export default function CoachModal({
         ];
 
   return (
-    /*
-     * Backdrop
-     * ─────────────────────────────────────────────────────────────────────
-     * position:fixed + inset:0 + zIndex:99999 guarantees the overlay sits
-     * above everything, regardless of any ancestor stacking context.
-     * Click on backdrop → close.  Click inside panel → stop propagation.
-     */
+    
+// Fixed overlay keeps the coach modal above the game UI.
     <div
       role="dialog"
       aria-modal="true"

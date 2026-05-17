@@ -48,9 +48,9 @@ The main focus was:
 - responsive design
 - simple but understandable project structure
 
-I also tried to separate the game logic from the interface to make the roject easier to maintain and improve later.
+I also tried to separate the game logic from the interface to make the project easier to maintain and improve later.
 
-P.S The web app is fully in english to cover a bigger audience / Веб-приложение сделано на английском чтобы охватить большую аудиторию
+The web app is written in English to make it accessible to a wider audience.
 
 ## Running Locally
 
